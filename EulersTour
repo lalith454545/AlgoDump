@@ -1,0 +1,13 @@
+Euler's tour algorithm. 
+This is an algorithm which is used to flatten a tree into an array. 
+There are 2 types in this
+1) full eulers tour
+2) eulers flattened tour
+
+in the first type, every node's entry time and exit time along with their occurances are noted down. 
+
+in the second type, onlt the entry type and the occurance is noted down. 
+
+this algorithm is used when we need to find subtree sums, not once but many times. That is if we have many subtree sum queries. 
+
+Lets understand this with a problem. 
