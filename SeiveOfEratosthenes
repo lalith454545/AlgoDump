@@ -1,0 +1,62 @@
+This is a very simple algorithm and is used to find the prime numbers which is less than any number.
+suppose there is a question where it is asked to find the prime numbers less than or equal to 30.
+
+then the common approach would be to iterate through every number and divide it by 2, 3, 5.... to check if it is divisible. if yes then it is composite or else prime. 
+
+but for small numbers it is ok. what about large numbers? if n= 10^n, then checking every number would be time limit problem. 
+
+here is where the seive of eratosthenes algorithm comes into picture. 
+
+the ideology is very simple. 
+
+lets suppose we want to find the prime numbers <=30. 2 is always prime. 
+
+so we strike off all the multiples of 2 i.e., 2, 4, 6, 8.....
+we go to the next unstriked number which will be 3. then we strike off all the multiples of 3. 
+
+so the algorithm repeats for every number checks it is unstriken or not. 
+
+optimizations:
+1) we can check for only factors < root n
+2) we can start striking off from i*i then add i after every number. 
+
+time complexity is O(N log log N)
+
+space complexity is O(N)
+
+code : 
+
+public class Sieve {
+
+    public static void main(String[] args) {
+
+        int n = 30;
+
+        boolean[] prime = new boolean[n + 1];
+
+        // Assume every number is prime
+        for (int i = 2; i <= n; i++) {
+            prime[i] = true;
+        }
+
+        for (int i = 2; i * i <= n; i++) {
+
+            if (prime[i]) {
+
+                // Remove multiples
+                for (int j = i * i; j <= n; j += i) {
+                    prime[j] = false;
+                }
+            }
+        }
+
+        System.out.println("Prime Numbers:");
+
+        for (int i = 2; i <= n; i++) {
+
+            if (prime[i]) {
+                System.out.print(i + " ");
+            }
+        }
+    }
+}
