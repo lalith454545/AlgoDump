@@ -1,1 +1,14 @@
+This algorithm is an algorithm which is used when we have to deal with subsets. when the array is large and we have to generate all the subsets, 
+then the time complexity will be very high. 
 
+lets suppose we have an array of length 4. so the number of subsets will be 2^4 which is 16. 
+this is ok
+but if the array is of length 40 then the number of subsets will be 2^40 which is approximately 1 trillion. 
+
+and it is almost impossible to handle 1 million subsets.
+
+here is where the meet in the middle algorithm comes into picture. 
+in this algorithm we divide the array into 2 halves. lets suppose the length of array is 40. 
+so the length of the first half is 20 and the second half is also 20. 
+
+to be continued...
